@@ -1,0 +1,47 @@
+#Uma empresa decidiu fazer um levantamento em relação aos candidatos que se apresentarem para preenchimento de vagas no seu quadro de funcionários, utilizando processamento eletrônico. Supondo que você seja o programador encarregado desse levantamento, fazer um algoritmo que leia um conjunto de dados para cada candidato contendo:
+#a) número de inscrição do candidato; b) idade; c) sexo (masculino, feminino);
+#d) experiência no serviço (sim ou não).
+#O último conjunto contém o número de inscrição do candidato igual a zero. Calcule:
+#a) o número de candidatos mulheres; b) o número de candidatos homens;
+#c) idade média dos homens que já têm experiência no serviço;
+#d) porcentagem dos homens com mais de 45 anos entre o total de homens;
+#e) número de mulheres que têm idade inferior a 35 anos e com experiência no serviço;
+#f) a menor idade entre mulheres que já têm experiência no serviço;
+
+
+contCF = contCH = contHE = contM45 = contF35 = soma = 0
+menorI = 10000
+
+NI = input('Nº de inscrição: ')
+while NI != 0:
+    I = int(input('Idade:'))
+    S = input('M ou F: ')
+    E = input('Experiência (sim ou não')
+
+    if S == 'F':
+        contCF += 1
+    elif S == 'H':
+        contCH += 1
+
+    if S == 'M' and E == 'sim':
+        soma += 1
+        contHE += 1
+
+    if I > 45 and S == 'M':
+        contM45 += 1
+
+    if I < 35 and S == 'F' and E == 'sim':
+        contF35 += 1
+
+    if S == 'F' and E == 'sim':
+        if I < menorI:
+            menorI = I
+
+    NI = input('Nº de inscrição: ')
+
+print('Nº de M: ', contCF)
+print('Nº de H: ', contCH)
+print('Idade média dos homens com exp: ', (soma / contHE))
+print('% de H com mais de 45 anos: ', ((contM45 * 100) / contCH))
+print('Nº de mulheres com I < 35 e experiência: ', contF35)
+print('Menor idade entre M com experiência: ', menorI)

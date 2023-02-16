@@ -1,0 +1,26 @@
+#A professora de geografia de uma escola fez uma lista com os nomes de cada aluno e as duas notas que eles obtiveram no período. A professora possui oito turmas com trinta alunos cada. A lista da professora esta organizada da seguinte forma: primeiro o nome da turma e em seguida o nome de cada aluno e suas notas.
+#Faça um programa que: calcule a média de cada aluno e escreva se ele foi aprovado ou reprovado. Calcule e escreva a média de cada turma.
+
+somaT = 0
+somaA = 0
+mediaTotal = 0
+
+for i in range (1,9):
+    nomeT = str(input('Escreva o nome da turma: '))
+    mediaTotal = 0
+    for j in range (1,31):
+        nomeA = str(input('Escreva o nome do aluno: '))
+        nota1 = float(input('Escreva a 1ª nota do aluno: '))
+        nota2 = float(input('Escreva a 2ª nota do aluno: '))
+        somaA += nota1 + nota2
+        mediaA = (nota1 + nota2) / 2
+        mediaTotal += mediaA
+        print('A média do aluno', nomeA , 'é igual a', mediaA)
+        if mediaA >= 7:
+            print(nomeA, 'aprovado/a!')
+            print('-=-=-=-=-=-=-=-=-=-')
+        else:
+            print(nomeA, 'reprovado/a.')
+            print('-=-=-=-=-=-=-=-=-=-')
+    mediaT = mediaTotal / 30
+    print('A média da', nomeT, 'é', mediaT)
