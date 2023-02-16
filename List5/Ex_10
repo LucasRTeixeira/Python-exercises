@@ -1,0 +1,42 @@
+#10.	Leia uma frase e imprima o total de vogais, o total de brancos e o total do resto.
+
+
+
+contV = contE = contG = 0
+
+f = input('Digite uma frase: ')   #daqui
+vet = [''] * len(f)
+for i in range(0, len(f)):
+    if f[i] != '':
+        vet[i] = f[i]             #até aqui, é o código padrão para colocar uma frase dentro de um vetor
+
+for j in range(0, len(f)):
+    if vet[j] == 'a' or vet[j] == 'e' or vet[j] == 'i' or vet[j] == 'o' or vet[j] == 'u':
+        contV += 1
+    elif vet[j] ==' ':
+        contE += 1
+    else:
+        contG += 1
+
+print('Vogais: ', contV)
+print('Espaços: ', contE)
+print('Resto: ', contG)
+
+
+#Questão feita em módulo
+
+s = input('Frase: ')
+
+def contaPalavra(s):
+    contV = contB = contR = 0
+    for i in range(0,len(s)):
+        if s[i] == 'a' or s[i] == 'e' or s[i] == 'i' or s[i] == 'o' or s[i] == 'u':
+            contV += 1
+        elif s[i] == ' ':
+            contB += 1
+        else:
+            contR += 1
+    return contV , contB , contR
+
+conts = contaPalavra(s)
+print('(Vogais , Brancos , Resto): ', conts)

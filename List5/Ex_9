@@ -1,0 +1,16 @@
+#9.	Leia uma frase e imprima as suas palavras.
+
+def palavras(pal,vet):
+    for i in range(0,len(pal)):
+        if pal[i] != ' ':
+            vet[i] = pal[i]
+
+frase = input('Escreve ai: ')
+v1 = len(frase)*['']
+palavras(frase,v1)
+for i in range(0,len(frase)):
+    if v1[i] != '':
+        print(v1[i], end='')
+    #print('')
+    elif v1[i] == '':
+        print(end = ' | ')

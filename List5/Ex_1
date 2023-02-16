@@ -1,0 +1,37 @@
+#1.	Faça um programa em python para ler as notas de 100 alunos e imprimir quantos alunos tiraram nota abaixo da media da turma e quantos tiraram acima ou igual a media.
+
+def lerNotas(TAM):          #criar vetor
+    notas = [0.0] * TAM
+    for i in range(0, len(notas)):
+        n = float(input('Nota: '))
+        notas[i] = n
+    return notas
+
+def somaNotas(vetor):
+    soma = 0
+    for i in range(0,len(vetor)):
+        soma += vetor[i]
+    return soma
+
+def mediaNotas(soma,T):
+    M = soma / T
+    return M
+
+def notaMaior(MEDIA, vetor):
+    contMA = contME = 0
+    for j in range(0, len(vetor)):
+        if vetor[j] >= MEDIA:
+            contMA += 1
+        elif vetor[j] < MEDIA:
+            contME += 1
+    return contMA , contME
+
+tam = 8
+vet = lerNotas(tam)
+s = somaNotas(vet)
+mediaN = mediaNotas(s,tam)
+compMA = notaMaior(mediaN, vet)
+
+print('Notas: ', vet)
+print('Média da turma = ', mediaN)
+print('(Aprovados , Reprovados): ', compMA)

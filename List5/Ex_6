@@ -1,0 +1,21 @@
+#6.	Leia um vetor de 40 posições contar quantos elementos pares se encontram no vetor. 
+
+def lerVetor(TAM):
+    vet = [0] * TAM
+    for i in range(0, len(vet)):
+        n = int(input('Insira numeros inteiros: '))
+        vet[i] = n
+    return vet
+
+def contaPar(vet):
+    contP = 0
+    for i in range(0, len(vet)):
+        if vet[i] % 2 == 0:
+            contP += 1
+    return contP
+
+tam = 10
+vetor = lerVetor(tam)
+cont = contaPar(tam, vetor)
+print(vetor)
+print(cont)

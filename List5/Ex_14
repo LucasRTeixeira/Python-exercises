@@ -1,0 +1,17 @@
+#14.	Leia uma string e imprima se ela é um palindromo. Um palindromo é uma cadeia que pode ser lida de frente para trás e de trás para frente.  Ex: ‘SOMOS’    ‘1234321’
+
+s = input('Digite para saber se é palíndomo: ')   #daqui
+vet = [''] * len(s)
+for i in range(0, len(s)):
+    vet[i] = s[i]                                 #até aqui, é para colocar uma string em um vetor
+
+for i in range(0, len(vet) // 2):
+    if s[i] != s[len(vet) - i - 1]:
+        p = False
+    else:
+        p = True
+
+if p == False:
+    print('Não é palíndromo')
+else:
+    print('É palíndromo')

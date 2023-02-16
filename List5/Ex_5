@@ -1,0 +1,23 @@
+#5.	Ler um vetor de números inteiros de 30 posições. Depois, ler um número inteiro X, imprimir quantas vezes o número X aparece no vetor.
+
+def criaVetor(TAM):
+    vet = [0] * TAM
+    for i in range(0, len(vet)):
+        n = int(input('Insira numeros inteiros: '))
+        vet[i] = n
+    return vet
+
+def contaNum(x, vet):
+    contX = 0
+    for j in range(0, len(vet)):
+        if vet[j] == x:
+            contX += 1
+    return contX
+
+tam = 10
+vetor = criaVetor(tam)
+
+a = int(input('Escreva um numero para ver quantas vezes ele aparece: '))
+
+cont = contaNum(a,vetor)
+print('Aparece ', cont, 'vezes.')

@@ -1,0 +1,14 @@
+#7.	Leia dois vetores de 10 posições cada. Armazene em um vetor de 20 posições os elementos do vetor 1 depois os elementos do vetor 2. No final imprima os três vetores
+
+vet = [0] * 10
+vet1 = [0] * 10
+
+for i in range(0, len(vet)):
+    n = int(input('Insira numeros inteiros: '))
+    vet[i] = n
+for j in range(0, len(vet1)):
+    m = int(input('Insira outros numeros inteiros: '))
+    vet1[j] = m
+
+vetG = vet + vet1
+print(vetG)

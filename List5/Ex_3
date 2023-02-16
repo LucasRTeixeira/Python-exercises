@@ -1,0 +1,22 @@
+#3.	Leia um vetor de 16 posições e troque as 8 primeiras posições pelas 8 últimas posições. Imprima o vetor original e o vetor trocado
+
+def criaVetor(TAM):
+    vet = [0] * TAM
+    for i in range(0, len(vet)):
+        n = int(input('Valor para entrar no vetor: '))
+        vet[i] = n
+    return vet
+
+def trocaVetor(TAM, vet):
+    for i in range(0,(TAM // 2)):
+        aux = vet[i]
+        vet[i] = vet[i+(TAM // 2)]
+        vet[i+(TAM // 2)] = aux
+    return vet
+
+tam = 16
+vetor = criaVetor(tam)
+print('Original: ', vetor)
+
+vetorNovo = trocaVetor(tam,vetor)
+print('Novo: ', vetorNovo)

@@ -1,0 +1,61 @@
+#13.	Faça um programa para ler 50 valores de temperaturas em graus Celsius. Transformar essas temperaturas em Farenheit e imprimir a media das temperaturas em Celsius e Farenheit e quantas temperaturas ficaram acima da media em Farenheit.
+
+somaC = somaF = contF = 0
+
+#Sem módulo
+
+vetF = [0.0] * 5
+vet = [0.0] * 5
+for i in range(0, len(vet)):
+    c = float(input('Escreva as temperaturas: '))
+    vet[i] = c
+    f = (9 * c) / 5 + 32
+    vetF[i] = f
+    somaC += c
+    somaF += f
+
+mediaC = somaC / 5
+print('Média em celsius: ', mediaC)
+mediaF = somaF / 5
+print('Média em fahrenheit: ', mediaF)
+
+for i in range(0,len(vet)):
+    if vetF[i] > mediaF:
+        contF += 1
+
+print('Número de temperaturas em F maiores que a média: ', contF)
+
+
+#Com módulo
+
+def criaVetor(TAM):
+    vet = [0] * TAM
+    for i in range(0, len(vet)):
+        n = float(input('Temp: '))
+        vet[i] = n
+    return vet
+
+def celFar(vet,TAM):
+    vetF = [0] * TAM
+    for i in range(0,len(vet)):
+        f = ((9 * vet[i]) / 5) + 32
+        vetF[i] = f
+    return vetF
+
+def somasMedias(vet, vetF, TAM):
+    somaC = somaF = cont = 0
+    for i in range(0, TAM):
+        somaC += vet[i]
+        somaF += vetF[i]
+    mediaC = somaC / TAM
+    mediaF = somaF / TAM
+    for i in range(0,TAM):
+        if vetF[i] > mediaF:
+            cont += 1
+    return mediaC , mediaF , cont
+
+tam = 5
+vetor = criaVetor(tam)
+vetorF = celFar(vetor, tam)
+medias = somasMedias(vetor, vetorF, tam)
+print('(Média de temp em celsius , Média de temp em Fahrenheit , Quantidade de temps em F acima da media): ', medias)

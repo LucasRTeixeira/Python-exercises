@@ -1,0 +1,21 @@
+#8.	Leia dois vetores de 15 posições cada, imprimir a soma dos elementos dos vetores e a diferença dos elementos dos vetores.
+
+soma = soma1 = 0
+vet = [0] * 5
+vet1 = [0] * 5
+
+for i in range(0, len(vet)):
+    n = int(input('Insira numeros inteiros: '))
+    vet[i] = n
+    soma += n
+
+for j in range(0, len(vet1)):
+    m = int(input('Insira outros numeros inteiros: '))
+    vet1[j] = m
+    soma1 += m
+
+somaTotal = soma + soma1
+dif = soma - soma1
+
+print('Soma: ', somaTotal)
+print('Diferença: ', dif)

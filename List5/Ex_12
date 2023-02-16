@@ -1,0 +1,26 @@
+#12.	Fazer um programa para ler dois vetores de 10 posições e colocar em um outro vetor de no máximo 20 posições a união dos elementos. Colocar em um vetor de 10 posições a intercecção dos dois vetores.
+
+vet = [0] * 10
+vet1 = [0] * 10
+vetU = [0] * 20
+vetI = [] * 10
+
+for i in range(0, len(vet)):
+    n = input('Escreva um elemento para entrar no vetor: ')
+    vet[i] = n
+    
+print('===============================================')
+
+for j in range(0, len(vet1)):
+    m = input('Escreva um elemento para entrar no vetor: ')
+    vet1[j] = m
+
+vetU = vet + vet1
+print('União: ', vetU)
+
+for i in range(0,len(vet)):
+    for j in range(0,len(vet1)):
+        if vet[i] == vet1[j]:
+            vetI += vet[i]
+
+print('Interseção: ', vetI)

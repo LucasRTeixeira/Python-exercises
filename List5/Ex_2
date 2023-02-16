@@ -1,0 +1,20 @@
+#2.	Ler um vetor de 12 posições inteiras e depois ler dois números X e Y de 1 a 12. Imprimir soma das posições X e Y do vetor.
+
+def criaVetor(TAM):
+    vetor = [0] * TAM
+    for i in range(0, len(vetor)):
+        n = int(input('Valor para entrar no vetor: '))
+        vetor[i] = n
+    return vetor
+
+def somaPos(x,y,vetor):
+    soma = vetor[x - 1] + vetor[y - 1]
+    return soma
+
+tam = 12
+vet = criaVetor(tam)
+x = int(input('Digite o primeiro num de 1 a 12: '))
+y = int(input('Digite o segundo num de 1 a 12: '))
+soma = somaPos(x,y,vet)
+
+print('A soma é entre ', x, 'e ', y, 'que tem resultado igual a ', soma)
