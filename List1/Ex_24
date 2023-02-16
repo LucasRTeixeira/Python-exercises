@@ -1,0 +1,8 @@
+#Faça um algoritmo que leia o salário de um funcionário e o salário mínimo vigente. Calcular e escrever quantos salários mínimos ganha o funcionário.
+
+s = float(input('Digite o salário: '))
+sm = float(input('Digite o salário mínimo: '))
+
+qs = s / sm
+
+print('Ganha ', qs , ' salários mínimos.')
