@@ -4,3 +4,5 @@
 List 1 - basic fundaments
 List 2 - conditionals (if,elif,else)
 List 3 - repetition (for,while)
+List 4 - strings
+List 5 = vectors and matrices
