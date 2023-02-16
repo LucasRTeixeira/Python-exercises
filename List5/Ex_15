@@ -1,0 +1,32 @@
+#15.	Leia uma matriz 5x5 e imprima o valor do maior elemento. Imprima também a linha e coluna desse elemento
+
+def criaMatriz(TAM):
+    mat = []
+    for i in range(0,TAM):
+        mat.append(0)
+        mat[i] = []
+        for j in range(0,TAM):
+            mat[i].append(int(input('Elem: ')))
+    return mat
+
+def printaMatriz(mat,TAM):
+    for i in range(0,TAM):
+        for j in range(0,TAM):
+            print(mat[i][j] , end = ' ')
+        print('')
+
+def maiorMatriz(mat , TAM):
+    maiorElem = maiorLin = maiorCol = 0
+    for i in range(0,TAM):
+        for j in range(0,TAM):
+            if mat[i][j] > maiorElem:
+                maiorElem = mat[i][j]
+                maiorLin = i + 1
+                maiorCol = j + 1
+    return maiorElem , maiorLin , maiorCol
+
+tam = 5
+m = criaMatriz(tam)
+mFinal = maiorMatriz(m,tam)
+printaMatriz(m,tam)
+print('(Maior elemento , Linha , Coluna) ', mFinal)

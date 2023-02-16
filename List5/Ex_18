@@ -1,0 +1,25 @@
+#18.	Leia uma matriz 6x6 e conte quantos elementos maiores que 10 existem na matriz. Imprima esse valor e a matriz.
+
+def criaMatQuadr(TAM):
+    matriz = []
+    for i in range(0,TAM):
+        matriz.append(0)
+        matriz[i] = []
+        for j in range(0,TAM):
+            matriz[i].append(int(input('Elem: ')))
+    return matriz
+
+def operação(tam, mat):
+    cont = 0
+    for i in range(0,tam):
+        for j in range(0,tam):
+            print(mat[i][j], end = ' ')
+            if mat[i][j] > 10:
+                cont += 1
+        print('')
+    return cont
+
+tam = 3
+mat = criaMatQuadr(tam)
+final = operação(tam,mat)
+print('Existem', final, 'elementos maiores que 10.')

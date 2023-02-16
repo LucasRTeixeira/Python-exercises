@@ -1,0 +1,41 @@
+#19.	Leia uma matriz 4x4 e um valor X, procure a primeira vez que esse valor aparece na matriz imprimindo sua linha e coluna. Cason não exista o elemento, imprima uma mensagem de erro.
+
+def criaMatQuadr(TAM):
+    matriz = []
+    for i in range(0,TAM):
+        matriz.append(0)
+        matriz[i] = []
+        for j in range(0,TAM):
+            matriz[i].append(int(input('Elem: ')))
+    return matriz
+
+def printaMatriz(tam):
+    for i in range(0,tam):
+        for j in range(0,tam):
+            print(mat[i][j], end = ' ')
+        print('')
+
+def achaX(tamanho, x):
+    a = 0
+    for i in range(0,tamanho):
+        if a == 1:
+            break
+        for j in range(0,tamanho):
+            if mat[i][j] == x:
+                found = True
+                a = 1
+                b = i
+                break
+            else:
+                found = False
+
+    if found == True:
+        print('O valor', x, 'está na linha', b+1, ', coluna', j+1, '.')
+    else:
+        print('ERRO! O valor não está na matriz.')
+
+elem = int(input('Elemento x: '))
+tam = 2
+mat = criaMatQuadr(tam)
+printaMatriz(tam)
+achou = achaX(tam, elem)

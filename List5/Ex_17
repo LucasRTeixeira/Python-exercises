@@ -1,0 +1,24 @@
+#17.	Crie uma matriz 5x5 com 1 na diagonal principal e 0 nas outras posições. Imprima a matriz.
+
+def criaMatQuadr_1_0(TAM):
+    matriz = []
+    for i in range(0,TAM):
+        matriz.append(0)
+        matriz[i] = []
+        for j in range(0,TAM):
+            if i == j:
+                matriz[i].append(1)
+            else:
+                matriz[i].append(0)
+    return matriz
+
+def printaMatriz(m,tam):
+    for i in range(0,tam):
+        for j in range(0,tam):
+            print(m[i][j], end = ' ')
+        print('')
+
+
+tam = 5
+m = criaMatQuadr_1_0(tam)
+printaMatriz(m,tam)

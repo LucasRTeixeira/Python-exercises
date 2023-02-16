@@ -1,0 +1,30 @@
+#21.	Leia uma matriz 3x3 e imprima a soma dos elementos da diagonal principal e a soma dos elementos da diagonal secundária. 
+
+def criaMatrizQuadr(TAM):
+    matriz = []
+    for i in range(0,TAM):
+        matriz.append(0)
+        matriz[i] = []
+        for j in range(0,TAM):
+            matriz[i].append(int(input('Elem: ')))
+    return matriz
+def printaMatriz(tam,mat):
+    for i in range(0,tam):
+        for j in range(0,tam):
+            print(mat[i][j], end = ' ')
+        print('')
+
+def operação(tam , mat):
+    somaP = somaS = 0
+    for i in range(0,tam):
+        for j in range(0,tam):
+            if i == j:
+                somaP += mat[i][j]
+            if (i + 1) + (j + 1) == tam + 1:
+                somaS += mat[i][j]
+    return somaP , somaS
+tam = 3
+mat = criaMatrizQuadr(tam)
+op = operação(tam , mat)
+printaMatriz(tam,mat)
+print('(Soma DP , Soma DS): ', op)

@@ -1,0 +1,50 @@
+#20.	Leia uma matriz 4x4 e troque os valores da 2 linha pelo da quarta coluna. Imprima a matriz original e a matriz trocada. 
+
+
+
+def criaMatQuadr(TAM):       #cria matriz quadrada
+    matriz = []
+    for i in range(0, TAM):
+        matriz.append(0)
+        matriz[i] = []
+        for j in range(0,TAM):
+            matriz[i].append(int(input('Elem: ')))
+    return matriz
+
+def criaMatQuadrZero(TAM):      #cria matriz quadrada com os elementos apenas sendo 0
+    matriz = []
+    for i in range(0, TAM):
+        matriz.append(0)
+        matriz[i] = []
+        for j in range(0,TAM):
+            matriz[i].append(0)
+    return matriz
+
+def printaMatriz(mat,tam):
+    for i in range(0,tam):          #printa a matriz no flormato de matriz
+        for j in range(0,tam):
+            print(mat[i][j], end = ' ')
+        print('')
+
+tam = 4
+mat = criaMatQuadr(tam)
+print('Matriz original')
+printaMatriz(mat,tam)
+
+vet4 = [0] * tam
+
+matNova = criaMatQuadrZero(tam)
+
+for i in range(0,tam):          #armazena os elementos da ultima coluna no vetor vet4
+    for j in range(0,tam):
+        if j == tam - 1:
+            vet4[i] = mat[i][j]
+
+for i in range(0,tam):          #coloca os elementos da matriz original na nova matriz
+    for j in range(0,tam):
+        matNova[i][j] = mat[i][j]
+        if i == 1:              #quando é a segunda linha, coloca os elementos do vetor que armazenamos os elem da 4 coluna
+            matNova[i][j] = vet4[j]
+
+print('Matriz nova')
+printaMatriz(matNova,tam)

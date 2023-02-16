@@ -1,0 +1,53 @@
+#22. Leia uma matriz 4x4 e troque os elementos da diagonal principal com os elementos da diagonal secundária. Imprima a matriz original e a matriz secundária
+
+def criaMatrizQuadr(TAM):
+    matriz = []
+    for i in range(0,TAM):
+        matriz.append(0)
+        matriz[i] = []
+        for j in range(0,TAM):
+            matriz[i].append(int(input('Elem: ')))
+    return matriz
+
+def criaMatrizQuadrZero(TAM):
+    matriz = []
+    for i in range(0,TAM):
+        matriz.append(0)
+        matriz[i] = []
+        for j in range(0,TAM):
+            matriz[i].append(0)
+    return matriz
+
+tam = 3
+mat = criaMatrizQuadr(tam)
+matNova = criaMatrizQuadrZero(tam)
+
+print('Matriz original')
+for i in range(0,tam):
+    for j in range(0,tam):
+        print(mat[i][j], end = ' ')
+    print('')
+
+vetP = [0] * tam
+vetS = [0] * tam
+
+for i in range(0,tam):
+    for j in range(0,tam):
+        if i == j:
+            vetP[i] = mat[i][j]
+        if (i + 1) + (j + 1) == tam + 1:
+            vetS[i] = mat[i][j]
+
+for i in range(0,tam):
+    for j in range(0,tam):
+        matNova[i][j] = mat[i][j]
+        if i == j:
+            matNova[i][j] = vetS[i]
+        if (i + 1) + (j + 1) == tam + 1:
+            matNova[i][j] = vetP[i]
+
+print('Matriz nova')
+for i in range(0,tam):
+    for j in range(0,tam):
+        print(matNova[i][j], end = ' ')
+    print('')

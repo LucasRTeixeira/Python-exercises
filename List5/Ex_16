@@ -1,0 +1,40 @@
+#16.	Leia uma matriz 7x7 e imprima a soma dos elementos da linha 6. Imprima tambem a soma dos elementos da coluna 2. Imprima também a soma dos elementos da diagonal principal. Imprima também o elemento da linha 3 e  coluna 4. Imprima também a soma de todos os elementos pares da matriz. 
+
+def criaMatQuadr(TAM):  #criar matriz quadrada
+    mat = []
+    for i in range(0,TAM):
+        mat.append(0)
+        mat[i] = []
+        for j in range(0,TAM):
+            mat[i].append(int(input('Elemento: ')))
+    return mat
+
+tam = 7
+matriz = criaMatQuadr(tam)
+
+def printaMatriz(matriz,tam):       #printar matriz na forma de matriz
+    for i in range(0,tam):
+        for j in range(0,tam):
+            print(matriz[i][j], end = ' ')
+        print('')
+
+def operações(matriz,tam):
+    soma6 = soma2 = somaD = somaP = 0
+    for i in range(0,tam):
+        for j in range(0,tam):
+            if i == 5:  #é um a menos pois a primeira linha é o 0, então a 6ª linha é i = 5
+                soma6 += matriz[i][j]
+            if j == 1:  #é um a menos pois a primeira coluna é o 0, então a 2ª coluna é j = 1
+                soma2 += matriz[i][j]
+            if i == j:
+                somaD += matriz[i][j]
+            if i == 2 and j == 3:
+                e = matriz[i][j]
+            if matriz[i][j] % 2 == 0:
+                somaP += matriz[i][j]
+    return soma6 , soma2 , somaD , e , somaP
+
+printaMatriz(matriz,tam)
+op = operações(matriz,tam)
+
+print('(Soma da 6ª linha, Soma da 2ª coluna , Soma da diagonal principal , Elemento da 3ª linha e 4ª coluna , Soma dos elementos pares): ', op)

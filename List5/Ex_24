@@ -1,0 +1,55 @@
+#24.	Leia um vetor gabarito de 10 posições, uma para cada uma das dez questões da prova. E uma matriz 40x10, que contém as respostas dos quarenta alunos da turma. Guardar em um vetor as notas dos alunos da turma, sabendo que cada questão correta vale 1 ponto.
+
+def criaMatriz(LIN,COL):
+    matriz = []
+    for i in range(0,LIN):
+        matriz.append(0)
+        matriz[i] = []
+        for j in range(0,COL):
+            matriz[i].append(input('Resposta: '))
+        print('-=-=-=-=-=-')
+    return matriz
+
+lin = 40
+col = 10
+mat = criaMatriz(lin, col)
+vetGab = ['a','b','a','d','e','b','c','e','c','d']
+vetNotas = [0] * lin
+
+for i in range(0,lin):
+    cont = 0
+    for j in range(0,col):
+        if j == 0:
+            if mat[i][j] == 'a':
+                cont += 1
+        elif j == 1:
+            if mat[i][j] == 'b':
+                cont += 1
+        elif j == 2:
+            if mat[i][j] == 'a':
+                cont += 1
+        elif j == 3:
+            if mat[i][j] == 'd':
+                cont += 1
+        elif j == 4:
+            if mat[i][j] == 'e':
+                cont += 1
+        elif j == 5:
+            if mat[i][j] == 'b':
+                cont += 1
+        elif j == 6:
+            if mat[i][j] == 'c':
+                cont += 1
+        elif j == 7:
+            if mat[i][j] == 'e':
+                cont += 1
+        elif j == 8:
+            if mat[i][j] == 'c':
+                cont += 1
+        elif j == 9:
+            if mat[i][j] == 'd':
+                cont += 1
+        vetNotas[i] = cont
+
+print('Notas dos alunos')
+print(vetNotas)
