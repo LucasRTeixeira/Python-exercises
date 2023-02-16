@@ -1,3 +1,5 @@
+#5. Elabore um algoritmo que calcule e imprima a média de um aluno em uma disciplina com as seguintes características: Duas provas (P1 e P2), um trabalho (T) e 5 listas de exercícios (L1..L5). A média será dada por: média = 0,3xP1 + 0,4xP2 + 0,2x(média das listas) + 0,1xT.
+
 P1 = float(input('Escreva a nota da prova 1: '))
 P2 = float(input('Escreva a nota da prova 2: '))
 T = float(input('Escreva a nota do trabalho: '))

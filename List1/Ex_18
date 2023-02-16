@@ -1,0 +1,11 @@
+#18. Faça um algoritmo que leia o valores em dias e imprima tudo em ano, meses e dias.
+
+d = int(input('Escreva os dias: '))
+
+a = d // 365
+m = (d % 365) // 30
+nd = (d % 365) % 30
+
+print('Anos: ', a)
+print('Meses: ', m)
+print('Dias: ' , d)

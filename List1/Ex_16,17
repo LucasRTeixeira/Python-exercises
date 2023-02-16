@@ -1,0 +1,13 @@
+#16. Faça um algoritmo que leia os valores de horas, minutos e segundos e transforme tudo para segundo. EX: 3 horas 2minutos 7 segundos	= 10927 segundos	
+
+#17. Faça um algoritmo que leia os valores de anos, meses e dias e imprima tudo em dias.
+
+h = int(input('Escreva as horas: '))
+m = int(input('Escreva os minutos: '))
+s = int(input('Escreva os segundos: '))
+
+nh = h * 3600 #transforma em seg / se for na questão 17, teria que multiplicar por 365 (anos)
+nm = m * 60 #transforma em seg / se for na questão 17, teria que multiplicar por 30 (meses)
+
+total = nh + nm + s
+print('Total de seg: ' , total)
