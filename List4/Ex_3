@@ -1,0 +1,10 @@
+#Faça um programa que leia uma string e um caractere e diga quantas vezes o caractere aparece na string
+
+s = input('String: ')
+c = input('Caracter: ')
+cont = 0
+
+for i in range(0, len(s)):
+    if s[i] == c:
+        cont += 1
+print(cont)

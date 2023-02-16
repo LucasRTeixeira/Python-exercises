@@ -1,0 +1,26 @@
+#Faça um programa que leia duas strings e imprima a interseção entre as strings
+#Ex:   cabelo e pelo => e, l, o
+
+s1 = input('Digite a string: ')
+s2 = input('Digite outra string: ')
+
+def inter(s1,s2):
+    x = ''
+    for i in range(0, len(s1)):
+        for j in range(0, len(s2)):
+            if s1[i] == s2[j]:
+                x += s1[i]
+    return x
+a = inter(s1,s2)
+print(a , end = ' ')
+
+
+#Questão 8 outra maneira
+
+s1 = input('Digite a string: ')
+s2 = input('Digite outra string: ')
+
+for i in range(0, len(s1)):
+    for j in range(0, len(s2)):
+        if s1[i] == s2[j]:
+            print(s1[i] , end = ' ')

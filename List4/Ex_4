@@ -1,0 +1,7 @@
+#Faça um programa que leia uma string e um caractere e crie uma outra string sem o caractere lido.
+
+s = input('Escreve ai: ')
+c = input('escreve um caracter ai: ')
+for i in range(0,len(s)):
+    if c != s[i]:
+        print(s[i], end = ' ')

@@ -1,0 +1,34 @@
+#Faça um programa que leia uma string e crie uma outra string invertendo as posições de dois em dois
+#Ex:  mexico => emixoc
+
+
+s = input('Digite a string: ').lower()
+s2 = s3 = s
+
+for i in range(0, len(s), 2):
+    s = s.replace(s[i], '@')
+    s = s.replace(s[i+1], '!')
+    s2 = s2.replace(s2[i], '@')
+    s3 = s3.replace(s3[i+1], '@')
+
+    s = s.replace('@',s2[i+1])
+    s = s.replace('!', s3[i])
+    s2 = s2.replace('@', s3[i])
+    s3 = s3.replace(s3[i+1], s2[i+1])
+
+print(s)
+
+#OUTRA ALTERNATIVA
+
+cadeia = input("Digite a cadeia: ")
+cadeia2 = ''
+
+if len(cadeia) % 2 == 1:
+    for i in range(0, len(cadeia)-1, 2):
+        cadeia2 = cadeia2 + cadeia[i + 1] + cadeia[i]
+    cadeia2 = cadeia2 + cadeia[len(cadeia)-1]
+else:
+    for i in range(0, len(cadeia), 2):
+        cadeia2 = cadeia2 + cadeia[i+1] + cadeia[i]
+
+print(cadeia2)

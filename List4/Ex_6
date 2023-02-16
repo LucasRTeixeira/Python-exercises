@@ -1,0 +1,20 @@
+#Faça um programa que leia uma string e crie uma outra string repetindo apenas as  vogais
+#Ex:  carro => caarroo
+
+
+s = input('String: ')
+
+for i in range (0, len(s)):
+    print(s[i])
+    if s[i].lower() == 'a' or s[i].lower() == 'e' or s[i].lower() == 'i' or s[i].lower() == 'o' or s[i].lower() == 'u':
+        print(s[i])
+
+#Outra alternativa
+x = ''
+s = input('String: ')
+for i in range(0, len(s)):
+    if s[i].lower() == 'a' or s[i].lower() == 'e' or s[i].lower() == 'i' or s[i].lower() == 'o' or s[i].lower() == 'u':
+        x += s[i] + s[i]
+    else:
+        x += s[i]
+print(x)

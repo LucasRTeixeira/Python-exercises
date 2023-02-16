@@ -1,0 +1,18 @@
+#Faça um programa que leia uma string e diga se ela é um palíndromo.
+#Ex: SOMOS → é palíndromo pois ela é igual sendo lida da direita para esquerda e da esquerda para a direita
+
+x = ''
+s = input('String: ')
+
+for i in range(len(s) - 1, -1, -1):
+    x += s[i]
+for i in range(0, len(x)):
+    if x[i] == s[i]:
+        p = True
+    else:
+        p = False
+        break
+if p == True:
+    print('Palíndromo')
+else:
+    print('Não é palíndromo')
