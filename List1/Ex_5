@@ -1,0 +1,13 @@
+P1 = float(input('Escreva a nota da prova 1: '))
+P2 = float(input('Escreva a nota da prova 2: '))
+T = float(input('Escreva a nota do trabalho: '))
+L1 = float(input('Escreva a nota da lista 1: '))
+L2 = float(input('Escreva a nota da lista 2: '))
+L3 = float(input('Escreva a nota da lista 3: '))
+L4 = float(input('Escreva a nota da lista 4: '))
+L5 = float(input('Escreva a nota da lista 5: '))
+
+mediaL = (L1 + L2 + L3 + L4 + L5) / 5
+media = (0.3 * P1) + (0.4 * P2) + (0.2 * mediaL) + (0.1 * T)
+
+print('Média final: ' , media)
