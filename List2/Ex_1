@@ -1,0 +1,12 @@
+#Fazer um algoritmo que leia três valores inteiros, determine e escreva o menor deles.
+
+a = int(input('Escreva o 1º número: '))
+b = int(input('Escreva o 2º número: '))
+c = int(input('Escreva o 3º número: '))
+
+if a > b and a > c:
+    print('Maior: ', a)
+elif b > c:
+    print('Maior: ', b)
+else:
+    print('Maior: ', c)

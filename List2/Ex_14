@@ -1,0 +1,23 @@
+#A prefeitura da “Terra do Nunca” vai realizar suas eleições em urnas eletrônicas, sendo 3 os candidatos à prefeitura (Capitão Gancho, Peter Pan e Wendy). Elabore um programa que permita ao usuário informar o número de votos de cada um dos candidatos, escrevendo em seguida o resultado da eleição. Sabe-se que, caso um dos candidatos tenha mais de 50% dos votos ele é eleito sem necessidade de segundo turno. Na “Terra do Nunca” não existem votos nulos ou brancos.
+
+vcg = int(input('Votos do Cap Gancho: '))
+vpp = int(input('Votos do Peter Pan: '))
+vw = int(input('Votos da Wendy: '))
+e = vcg + vpp + vw
+
+pvcg = (vcg * 100) / e
+pvpp = (vpp * 100) / e
+pvw = (vw * 100) / e
+if pvcg > 50:
+   print('Capitão ganhou no primeiro turno!')
+elif pvpp > 50:
+    print('Peter ganhou no primeiro turno')
+elif pvw > 50:
+    print('Wendy ganhou no primeiro turno')
+else:
+    if vcg > vpp and vcg > vw:
+        print('Capitão ganhou')
+    elif vpp > vw:
+        print('Peter ganhou')
+    else:
+        print('Wendy ganhou')

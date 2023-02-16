@@ -1,0 +1,19 @@
+#Elabore um algoritmo que implemente uma calculadora com as operações de soma, subtração, multiplicação e divisão. O algoritmo deve ler os operadores e a operação a ser realizada e mostrar o resultado. Seu algoritmo deve considerar o caso em que o usuário tente dividir um número por zero.
+
+n1 = float(input('Primeiro valor: '))
+op = input('Soma = + | Subtr = - | Mult = x | Div = / : ')
+n2 = float(input('Segundo valor: '))
+
+if n2 == 0 and op == '/':
+    print('ERRO')
+
+if op == '+':
+    print(n1 + n2)
+elif op == '-':
+    print(n1 - n2)
+elif op == 'x':
+    print(n1 * n2)
+elif op == '/':
+    print(n1 / n2)
+else:
+    print('Inválido')

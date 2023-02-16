@@ -1,0 +1,25 @@
+#Considere as viagens que são realizadas entre as cidades de Metrópolis e Gotham City. Sabendo que todas as viagens entre estas cidades são feitas sempre dentro de um mesmo dia, elabore um programa que permita que um usuário informe o momento exato (hora, minuto, segundo) da sua partida e da sua chegada, e que calcule e escreva o tempo total da viagem (também em horas, minutos e segundos).
+
+hs = int(input('Informe a hora exata de saída: '))
+ms = int(input('Informe o minuto exato de saída: '))
+ss = int(input('Informe o segundo exato de saída: '))
+
+hc = int(input('Informe a hora exata de chegada: '))
+mc = int(input('Informe o minuto exato de chegada: '))
+sc = int(input('Informe o segundo exato de chegada: '))
+
+nhs = hs * 3600
+nms = ms * 60
+totalS = nhs + nms + ss
+
+nhc = hc * 3600
+nmc = mc * 60
+totalC = nhc + nmc + sc
+
+total = totalC - totalS
+
+HF = total // 3600
+MF = (total % 3600) // 60
+SF = (total % 3600) % 60
+
+print('A viagem durou ', HF , 'horas, ' , MF , 'minutos e ' , SF , ' segundos')

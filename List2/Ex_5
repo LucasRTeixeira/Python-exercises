@@ -1,0 +1,23 @@
+#5. Faça um algoritmo que receba três notas de um aluno, calcule e mostre a média aritmética e a mensagem que segue a tabela abaixo. Para alunos de exame, calcule e mostre a nota que deverá ser tirada no exame para a aprovação, considerando que a média no exame é 6,0.  Nota no exame = (12 – media).
+#Média Aritmética	Mensagem
+#  0 – 2,9	        Reprovado
+#  3,0 – 6,9	        Exame
+#  7,0 – 10,0	    Aprovado
+
+n1 = float(input('N1: '))
+n2 = float(input('N2: '))
+n3 = float(input('N3: '))
+media = (n1 + n2 + n3) / 3
+
+if media >= 7:
+    print('Aprovado!')
+elif media < 3:
+    print('Reprovado!')
+else:
+    ne = 12 - media
+    print('Deverá tirar: ', ne)
+    nf = float(input('NF: '))
+    if nf >= ne:
+        print('Aprovado!')
+    else:
+        print('Reprovado!')
